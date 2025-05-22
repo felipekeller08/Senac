@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        
+    </head>
+    <body>
+       <style>
+            body {
+                text-align: center;
+                background-color: ;
+            }
+            header {
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
+                background-color: whitesmoke;
+                color: blueviolet;
+                margin: 0px 0px 0px 0px;
+                height: 50px;
+            }
+            form {
+                justify-content: center;
+                justify-items: center;
+                align-items: center;
+                box-shadow: 5px 5px 5px 5px gray;
+                margin: 10px 450px 10px 450px;
+                background-color: whitesmoke;
+            }
+        </style>
+        <header>
+            <h1>Petshop - Vacina e Alimentos</h1>
+        </header>
+          <form method="post">
+            <h2>Vacina:</h2>
+            <label for="fname">Valor:</label>
+            <input type =" text" id="vlrvacina" name="vlrvacina" value=""><br>
+            <label for="fname">quantidade:</label>
+            <input type =" text" id="qtdevacina" name="qtdevacina" value=""><br>
+            <h2>Alimentos</h2>
+             <label for="fname">Valor:</label>
+            <input type =" text" id="vlralimento" name="vlralimento" value=""><br>
+            <label for="fname">quantidade:</label>
+            <input type =" text" id="qtdealimento" name="qtdealimento" value=""><br>
+            <input type="submit" value="salvar">
+        </form>   
+        <?php
+        // comando for
+        echo "<br>";     
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $qtdevacina = $_POST["qtdevacina"];
+        $vlrvacina = $_POST["vlrvacina"];
+        $qtdealimento = $_POST["qtdealimento"];
+        $vlralimento = $_POST["vlralimento"]; 
+        $totalvac = $vlrvacina * $qtdevacina;
+        $totalali = $vlralimento * $qtdealimento;
+        //cálculo
+        $vlrtotal = $totalvac + $totalali;
+        //escreva na tela
+        <div class="texto">
+        echo "valor total das vacinas: R$$totalvac";echo "<br>"; 
+        echo "valor total dos alimentos: R$$totalali";echo "<br>"; 
+        echo "valor total é igual a: R$$vlrtotal";
+        </div>
+        }
+        
+        ?>
+    </body>
+</html>

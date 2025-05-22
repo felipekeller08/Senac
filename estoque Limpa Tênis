@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        
+    </head>
+    <body>
+        <style> 
+            body {
+                text-align: center;
+                background-color: ;
+            }
+            form {
+                box-shadow: 5px 5px 5px 5px gray;
+                margin: 10px 450px 10px 450px;
+                background-color: whitesmoke;
+            }
+        </style>
+            <h1>Venda de produtos</h1>
+          <form method="post">
+            <label for="fname">código:</label><br>
+            <input type ="text" id="codigo" name="codigo" value=""><br>
+            <label for="fname">Nome:</label><br>
+            <input type ="text" id="nome" name="nome" value=""><br>
+            <label for="fname">Quantidade:</label><br>
+            <input type ="text" id="qtde" name="qtde" value=""><br>
+            <label for="fname">Valor:</label><br>
+            <input type ="text" id="valor" name="valor" value=""><br>
+            <input type="submit" value="salvar">
+        </form>   
+        <?php
+        // comando for
+        echo "<br>";     
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $codigo = $_POST["codigo"];
+        $nome = $_POST["nome"];
+        $qtde = $_POST["qtde"];
+        $valor = $_POST["valor"]; 
+        //cálculo
+        $vlrtotal = $valor * $qtde;
+        //escreva na tela 
+        echo "Código do produto: $codigo";
+        echo "<br>"; 
+        echo "Nome do produto: $nome";
+        echo "<br>"; 
+        echo "Quantidade do produto: $qtde";
+        echo "<br>"; 
+        echo "valor total é igual a $vlrtotal";
+        
+        }
+        
+        ?>
+    </body>
+</html>
